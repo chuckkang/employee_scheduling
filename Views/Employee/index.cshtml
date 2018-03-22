@@ -1,0 +1,46 @@
+@using employee_scheduling.Models
+@model employee_scheduling.Models.EmployeeModel
+
+
+		<br><br>
+		@foreach (var err in ViewBag.Errors)
+		{	if (err.Errors.Count > 0)
+			{
+				<p>@err.Errors[0].ErrorMessage</p>
+			}
+		}
+		@using (Html.BeginForm("", "employee", FormMethod.Post))
+		{	
+			<div class="formalign">
+				<div>
+					@Html.ValidationMessageFor(e => e.UserId, "", new {@class = "text text-danger"})<br>
+					@Html.LabelFor(e => e.UserId) : @Html.TextBoxFor(e => e.UserId)
+				</div>
+				<div>
+					@Html.ValidationMessageFor(e => e.FirstName, "", new {@class = "text text-danger"})<br>
+					@Html.LabelFor(e => e.FirstName) : @Html.TextBoxFor(e => e.FirstName)
+				</div>
+				<div>
+					@Html.ValidationMessageFor(e => e.LastName, "", new {@class = "text text-danger"})<br>
+					@Html.LabelFor(e => e.LastName) : @Html.TextBoxFor(e => e.LastName)
+				</div>	
+				<div>
+					@Html.ValidationMessageFor(e => e.Email, "", new {@class = "text text-danger"})<br>
+					@Html.LabelFor(e => e.Email) : @Html.TextBoxFor(e => e.Email)
+				</div>
+				<div>
+					@Html.ValidationMessageFor(e => e.Password, "", new {@class = "text text-danger"})<br>
+					@Html.LabelFor(e => e.Password) : @Html.TextBoxFor(e => e.Password)
+				</div>
+				<div>
+					@Html.ValidationMessageFor(e => e.ConfirmPassword, "", new {@class = "text text-danger"})<br>
+					@Html.LabelFor(e => e.ConfirmPassword) : @Html.TextBoxFor(e => e.ConfirmPassword)
+				</div>
+				<div>
+					<button type="submit" class="btn btn-primary">Add User</button>
+				</div>
+			</div>
+		}
+
+
+
