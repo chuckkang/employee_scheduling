@@ -20,7 +20,7 @@ namespace employee_scheduling
 		public IActionResult Index(EmployeeModel _employee)
 		{	// show a blank form
 			Console.WriteLine(">>>>>>>>>>>>>>>>>we are in the employee controller");
-			Console.WriteLine(HttpContext.Request.ToString() + ">>>>>>>>>>>>>>>>>");
+			Console.WriteLine(HttpContext.Request.ToString() + ">>>>>>>>>>>>");
 			// PasswordHasher<string> asdf = new PasswordHasher<string>();
 			ViewData["Errors"] = "";
 			if (TryValidateModel(_employee) ==false)
